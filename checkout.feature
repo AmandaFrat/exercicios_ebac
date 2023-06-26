@@ -12,23 +12,12 @@
             E clicar em finalizar compra
             Então deve ser exibida uma mensagem de sucesso "Compra finalizada com sucesso"
 
-            Cenário: Campo email com formato inválido
-            Quando eu inserir o email "amanda@uhufe"
-            E passar para o próximo campo a ser digitado
-            Então deve exibir uma mensagem de erro: "Email inválido"
-
-            Cenário: Campo vazio
-            Quando deixar o campo vazio
-            Então deve exibir uma mensagem de alerta: "Campo Inválido"
-
-            Esquema do Cenário: Campos obrigatórios vazios
-            Quando houver <campo> vazio
-            Então deve ser exibida uma <mensagem> de alerta
+            Esquema do Cenário: Concluir cadastro
+            Quando os campos obrigatórios <Nome> <Sobrenome> <Pais> <Endereco> <Cidade> <CEP> <Telefone> <Email> forem preenchidos
+            Então deve ser exibida uma <Mensagem>
             Exemplos:
-            | Campo     | Mensagem       |
-            | Nome      | Campo Inválido |
-            | Sobrenome | Campo Inválido |
-            | País      | Campo Inválido |
-            | CEP       | Campo Inválido |
-            | Telefone  | Campo Inválido |
+            | Nome    | Sobrenome | Pais   | Endereco | Cidade  | CEP    | Telefone  | Email            | Mensagem                       |
+            | Joaquim | Soares    | Brasil | Rua 1    | Vitória | 439484 | 38438439  | joaquim@ebac.com | Cadastro Realizado com sucesso |
+            | Debora  | Raimundo  | Brasil | Rua 2    | Vitória |        | 48382382  | debora@ebac.com  | Campo Inválido                 |
+            | Matheus | Carvalho  | Brasil | Rua 3    | Vitória | 349373 | 128198283 | matheus@fhu.com  | Email Inválido                 |
 
